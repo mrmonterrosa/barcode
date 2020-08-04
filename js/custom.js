@@ -21,9 +21,9 @@ function startScanner() {
         decoder: {
             readers: ["code_128_reader"]
         },
-        locate: true,
+        locate: false,
         halfSample: true,
-        patchSize: "x-large",
+        patchSize: "medium",
 
     }, function (err) {
         if (err) {
