@@ -23,7 +23,7 @@ function startScanner() {
         },
         locate: false,
         halfSample: true,
-        patchSize: "medium",
+        patchSize: "x-large",
 
     }, function (err) {
         if (err) {
