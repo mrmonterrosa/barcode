@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Scan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-sm-4 ">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" 
+                   placeholder="Barcode" 
+                   aria-label="Barcode"
+                   disabled="disabled"
+                   id="input-scan"
+                   aria-describedby="button-addon2"/>
+            <div class="input-group-append">
+                <button class="btn btn-success" 
+                        type="button" 
+                        id="btn-scan"
+                        data-toggle="modal"
+                        data-target="#scan-modal">
+                  ESCANEAR CODIGO
+                </button>
+            </div>
+          </div>
+        </div>        
+      </div>       
+
+      <div class="modal fade" id="scan-modal" data-backdrop="static" 
+            tabindex="-1" 
+            role="dialog" 
+            aria-labelledby="scan-modalLabel" 
+            aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="scan-modalLabel">SCANEAR</h5>
+              <button   type="button" 
+                        class="close"
+                        id="btn-cancelar-small"
+                        aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="cam" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="btn-cancelar">CANCELAR</button>
+            </div>
+          </div>
+        </div>
+      </div>              
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/adapter.js"></script>
+    <script src="js/quagga.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
