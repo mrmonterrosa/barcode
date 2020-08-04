@@ -10,20 +10,18 @@ function startScanner() {
             type: "LiveStream",
             target: document.querySelector('#cam'),
             constraints: {
-                width: 460,
-                facingMode: 'environment',
-                aspectRatio: {
-                  min: 1,
-                  max: 2,
-                },
+                width: screen.width / 3,
+                height: screen.height / 2,
+                facingMode: 'environment'
             },  
         },
         decoder: {
             readers: ["code_128_reader"]
         },
-        locate: false,
-        halfSample: true,
-        patchSize: "x-large",
+        locator: {
+            halfSample: true,
+            patchSize: "x-large",
+        }        
 
     }, function (err) {
         if (err) {
