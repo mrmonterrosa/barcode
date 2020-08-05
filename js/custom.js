@@ -10,9 +10,15 @@ function startScanner() {
             type: "LiveStream",
             target: document.querySelector('#cam'),
             constraints: {
-                width: screen.width / 3,
-                height: screen.height / 2,
-                facingMode: 'environment'
+                width: 640,
+                height: 480,
+                facingMode: 'environment',
+                video: {
+                    mandatory: {
+                        minWidth: 1280,
+                        minHeight: 720
+                    }
+                }
             },  
         },
         decoder: {
@@ -92,8 +98,31 @@ function startScanner() {
         stopHidenScan();
     });
 
+        
+}
+/**
+ * Activa la linterna de la camara
+ */
+function activarLinterna() { 
+    var track = Quagga.CameraAccess.getActiveTrack();
+    console.log("tack: ", track);
+    track.applyConstraints({
+        advanced: [
+            {
+                torch:true
+            }
+        ]
+    });
     
 }
+/**
+ * Evento del boton lintena que enciende la linterna del dispositivo
+ */
+document.getElementById("btn-linterna").addEventListener("click", function () {
+    if (_scannerIsRunning) {
+        activarLinterna();
+    }
+}, false);
 /**
  * Ejecuta el sonido cuando el codigo de barras ha sido escaneado
  */

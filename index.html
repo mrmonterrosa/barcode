@@ -24,19 +24,19 @@
                         id="btn-scan"
                         data-toggle="modal"
                         data-target="#scan-modal">
-                  ESCANEAR CODIGO
+                  ESCANEAR
                 </button>
             </div>
           </div>
         </div>        
       </div>       
 
-      <div class="modal fade" id="scan-modal" data-backdrop="static" 
+      <div class="modal fullscreen-modal fade" id="scan-modal" data-backdrop="static" 
             tabindex="-1" 
             role="dialog" 
             aria-labelledby="scan-modalLabel" 
             aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="scan-modalLabel">SCANEAR</h5>
@@ -48,9 +48,10 @@
               </button>
             </div>
             <div class="modal-body">
-                <div id="cam" />
+                <div id="cam" class="row justify-content-center"/>
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-outline-warning" id="btn-linterna">LINTERNA</button>
               <button type="button" class="btn btn-secondary" id="btn-cancelar">CANCELAR</button>
             </div>
           </div>
