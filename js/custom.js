@@ -24,10 +24,11 @@ function startScanner() {
         decoder: {
             readers: ["code_128_reader"]
         },
+        locale: false,
         locator: {
             halfSample: true,
             patchSize: "x-large",
-        }        
+        }    
 
     }, function (err) {
         if (err) {
@@ -42,8 +43,7 @@ function startScanner() {
     /**
      * Mientras la imagen/video es procesada se crea un canvas señalando
      * los posible lugares donde se pueda 
-     */
-    
+     */    
     Quagga.onProcessed(function (result) {
 
         let drawingCtx = Quagga.canvas.ctx.overlay,
@@ -96,9 +96,7 @@ function startScanner() {
         playSound();
         $('#input-scan').val(result.codeResult.code);
         stopHidenScan();
-    });
-
-        
+    });        
 }
 /**
  * Activa la linterna de la camara
