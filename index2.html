@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zxing Barcode</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <main class="wrapper" style="padding-top:2em">
+
+        <section class="container" >
+            <div class="col-12">
+                <h2 class="title">Multi-Lector de Codigos de Barras</h2>
+        
+                <p>
+                    <a class="btn btn-danger" href="index.html">INICIO 🏡</a>
+                </p>
+            
+                <div>
+                    <a class="btn btn-warning text" id="startButton">INICIAR</a>
+                    <a class="btn btn-outline-danger" id="resetButton">RESETEAR</a>
+                </div>
+                <p/>
+                <div id="sourceSelectPanel" style="display:none">
+                    <label for="sourceSelect">Fuente de Video</label>
+                    <select class="custom-select" id="sourceSelect" >
+                    </select>
+                </div>
+                <p/>  
+                <div class="form-group">
+                    <div class="input-group">
+                        <input  type="text" id="result" placeholder="Resultado" class="form-control" readonly>
+                    </div>
+                </div>
+                <p/>
+                <div>
+                    <video id="video" class="col-12" style="border: 1px solid gray; background-color: darkgray;"></video>
+                </div>
+                <hr/>
+                <small>* Presione el boton <strong>INICIAR</strong> para iniciar con el video.</small>
+                <p></p>
+                <small>* Si tiene varias camaras en su disposito seleccione la <strong>Fuente de Video</strong> a utilizar.</small>
+                <p></p>
+                <small>* Presione <strong>RESETEAR</strong> para volver al estado inicial.</small>
+            </div>            
+        </section>
+    
+    </main>
+    <script src="js/zxing.min.js"></script>
+    <script src="js/custom2.js"></script>
+</body>
+</html>
