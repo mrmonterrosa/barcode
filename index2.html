@@ -15,13 +15,8 @@
         
                 <p>
                     <a class="btn btn-danger" href="index.html">INICIO 🏡</a>
-                </p>
-            
-                <div>
-                    <a class="btn btn-warning text" id="startButton">INICIAR</a>
-                    <a class="btn btn-outline-danger" id="resetButton">RESETEAR</a>
-                </div>
-                <p/>
+                </p>  
+                
                 <div id="sourceSelectPanel" style="display:none">
                     <label for="sourceSelect">Fuente de Video</label>
                     <select class="custom-select" id="sourceSelect" >
@@ -34,8 +29,19 @@
                     </div>
                 </div>
                 <p/>
+                <div class="justify-content-center row">
+                    <a class="btn btn-warning mr-1" id="startButton">INICIAR</a>
+                    <a class="btn btn-outline-danger mr-1" id="resetButton">RESETEAR</a>
+                    <a class="btn btn-outline-info" id="torchButton">LINTERNA</a>
+                </div>
+                <p/>
+                <div class="justify-content-center row">
+                    <a class="btn btn-secondary text-light mr-2" id="zooOutButton">-</a>
+                    <a class="btn btn-secondary text-light" id="zooInButton">+</a>
+                </div>
+                <p/>
                 <div>
-                    <video id="video" class="col-12" style="border: 1px solid gray; background-color: darkgray;"></video>
+                    <video id="video" class="col-12" style="border: 1px solid gray; background-color: black;"></video>
                 </div>
                 <hr/>
                 <small>* Presione el boton <strong>INICIAR</strong> para iniciar con el video.</small>
