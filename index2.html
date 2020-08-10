@@ -27,22 +27,20 @@
                 </div>
                 <div id="cam-fullscreen" class="overlay text-light">
                     <div class="row">
-                        <div class="col-12 parent">
-                            <div class="embed-responsive embed-responsive-1by1">
-                                <video id="video" class="embed-responsive-item" style="border: 1px solid gray; background-color: black;" allowfullscreen></video>
+                        <div class="col-12 parent h-100">
+                            <div class="embed-responsive embed-responsive-1by1 ">
+                                <video id="video" class="embed-responsive-item h-100" style="border: 1px solid gray; background-color: black;" allowfullscreen></video>
                             </div>                        
                             <a href="javascript:void(0)" class="closebtn text-danger" id="btn-close" title="Cerrar">&times;</a>
                             <div id="controles" class="row controles justify-content-around">
-                                <a href="javascript:void(0)" title="Iniciar" id="startButton">▶</a>
+                                <a href="javascript:void(0)" class="ml-2" title="Iniciar" id="startButton">▶</a>
                                 <a href="javascript:void(0)" title="Resetear" id="resetButton">🔚</a>                                        
                                 <a href="javascript:void(0)" title="Linterna" id="torchButton">🔦</a>
                                 <a href="javascript:void(0)" title="Alejar" id="zooOutButton">➖</a>
                                 <a href="javascript:void(0)" title="Acercar" id="zooInButton">➕</a>
-                                <div id="sourceSelectPanel" style="display:none">
-                                    <div class="form-group">
-                                        <select id="sourceSelect" >
-                                        </select>
-                                    </div>                                
+                                <div id="sourceSelectPanel" style="display:none" class="col-6">
+                                    <select id="sourceSelect" class="custom-select " >
+                                    </select>               
                                 </div>
                             </div>
                         </div>                        

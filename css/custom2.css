@@ -14,7 +14,10 @@
 .parent {
     position: relative;
 }
-
+.custom-select {
+    background: black;
+    color: white;
+}
 .overlay .closebtn {
     position: absolute;
     top: -5px;
@@ -27,7 +30,6 @@
     bottom: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    font-size: 10px;
 }
 
 .overlay .controles a {

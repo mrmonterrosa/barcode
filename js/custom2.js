@@ -25,6 +25,11 @@ function openPopup() {
   document.getElementById("cam-fullscreen").style.width = "100%";
   inciar ();
 }
+function closePopup() {
+  document.getElementById("cam-fullscreen").style.width = "0%";
+  document.getElementById('sourceSelect').innerHTML = '';
+  inciar ();
+}
 
 document.getElementById('btn-scannear').addEventListener('click', openPopup);
 
@@ -70,17 +75,18 @@ function inciar () {
             });
 
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
-                if (result) {
-                    console.log(result);
-                    playSound();
-                    document.getElementById('result').value = result.text
-                    linterna();
-                    codeReader.reset();
-                    trackStream.stop();
-                }
-                if (err && !(err instanceof ZXing.NotFoundException)) {
-                    console.error(err)
-                }
+              if (result) {
+                  console.log(result);
+                  playSound();
+                  document.getElementById('result').value = result.text
+                  linterna();
+                  codeReader.reset();
+                  trackStream.stop();
+                  closePopup();
+              }
+              if (err && !(err instanceof ZXing.NotFoundException)) {
+                  console.error(err)
+              }
             })
           console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
         })
@@ -94,9 +100,9 @@ function inciar () {
         });
 
         document.getElementById('btn-close').addEventListener('click', () => {
-          document.getElementById("cam-fullscreen").style.width = "0%";
-          document.getElementById('sourceSelect').innerHTML = '';
+          closePopup();
           codeReader.reset();
+          trackStream.stop();
         });
 
       })
