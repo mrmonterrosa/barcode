@@ -5,52 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zxing Barcode</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom2.css">
 </head>
 <body>
     <main class="wrapper" style="padding-top:2em">
 
-        <section class="container" >
-            <div class="col-12">
-                <h2 class="title">Multi-Lector de Codigos de Barras</h2>
-        
-                <p>
-                    <a class="btn btn-danger" href="index.html">INICIO 🏡</a>
-                </p>  
-                
-                <div id="sourceSelectPanel" style="display:none">
-                    <label for="sourceSelect">Fuente de Video</label>
-                    <select class="custom-select" id="sourceSelect" >
-                    </select>
-                </div>
-                <p/>  
-                <div class="form-group">
-                    <div class="input-group">
-                        <input  type="text" id="result" placeholder="Resultado" class="form-control" readonly>
+        <div class="container" >
+            <div class="col-12 no-gutters">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="title"><strong>Multi-Lector de Codigos de Barras</strong> </label>
                     </div>
                 </div>
-                <p/>
-                <div class="justify-content-center row">
-                    <a class="btn btn-warning mr-1" id="startButton">INICIAR</a>
-                    <a class="btn btn-outline-danger mr-1" id="resetButton">RESETEAR</a>
-                    <a class="btn btn-outline-info" id="torchButton">LINTERNA</a>
+                <div class="row">
+                    <div class="col-12">
+                        <input  type="text" id="result" placeholder="Resultado" class="form-control" readonly>
+                    </div>
+                    <div class="col-12 pt-2">      
+                        <button type="button" class="btn btn-success w-100" id="btn-scannear">ESCANER</button>
+                    </div>
                 </div>
-                <p/>
-                <div class="justify-content-center row">
-                    <a class="btn btn-secondary text-light mr-2" id="zooOutButton">-</a>
-                    <a class="btn btn-secondary text-light" id="zooInButton">+</a>
+                <div id="cam-fullscreen" class="overlay text-light">
+                    <div class="row">
+                        <div class="col-12 parent">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <video id="video" class="embed-responsive-item" style="border: 1px solid gray; background-color: black;" allowfullscreen></video>
+                            </div>                        
+                            <a href="javascript:void(0)" class="closebtn text-danger" id="btn-close" title="Cerrar">&times;</a>
+                            <div id="controles" class="row controles justify-content-around">
+                                <a href="javascript:void(0)" title="Iniciar" id="startButton">▶</a>
+                                <a href="javascript:void(0)" title="Resetear" id="resetButton">🔚</a>                                        
+                                <a href="javascript:void(0)" title="Linterna" id="torchButton">🔦</a>
+                                <a href="javascript:void(0)" title="Alejar" id="zooOutButton">➖</a>
+                                <a href="javascript:void(0)" title="Acercar" id="zooInButton">➕</a>
+                                <div id="sourceSelectPanel" style="display:none">
+                                    <label for="sourceSelect" class="input-group">Fuente de Video</label>
+                                    <div class="form-group">
+                                        <select id="sourceSelect" >
+                                        </select>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row pl-2">
+                        <div class="col-sm-4">
+                            <small>* Presione el boton <strong>INICIAR</strong> para iniciar con el video.</small>
+                        </div>
+                        <div class="col-sm-4">                            
+                            <small>* Si tiene varias camaras en su disposito seleccione la <strong>Fuente de Video</strong> a utilizar.</small>
+                        </div>
+                        <div class="col-sm-4">                            
+                            <small>* Presione <strong>RESETEAR</strong> para volver al estado inicial.</small>
+                        </div>
+                    </div>
                 </div>
-                <p/>
-                <div>
-                    <video id="video" class="col-12" style="border: 1px solid gray; background-color: black;"></video>
-                </div>
-                <hr/>
-                <small>* Presione el boton <strong>INICIAR</strong> para iniciar con el video.</small>
-                <p></p>
-                <small>* Si tiene varias camaras en su disposito seleccione la <strong>Fuente de Video</strong> a utilizar.</small>
-                <p></p>
-                <small>* Presione <strong>RESETEAR</strong> para volver al estado inicial.</small>
-            </div>            
-        </section>
+            </div>                        
+        </div>
     
     </main>
     <script src="js/zxing.min.js"></script>
