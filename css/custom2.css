@@ -34,7 +34,17 @@
 
 .overlay .controles a {
     font-size: 20px;
-    color : rgba(255, 255, 255, 0.5);    
+    padding: 8px;
+    color : rgba(255, 255, 255, 0.5); 
+}
+
+.overlay .controles a:hover {
+    background-color: rgba(13, 219, 255, 0.5);
+    text-decoration-line: none;
+}
+
+.overlay .controles a:disabled {
+    color : rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (max-height: 450px) {
